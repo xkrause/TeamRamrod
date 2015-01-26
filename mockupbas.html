@@ -20,27 +20,28 @@
             return false;
         }
         
-        var c=document.forms["mockupbas"]["email"].value;
-        var atpos = c.indexOf("@");
-        var dospos = c.lastIndexOf(".");
-        if (c != "" || c != null)
+        var c=document.forms["mockupbas"]["sid"].value;
+        if (c.length < 9 || c.length > 9)
         {
-           if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 > c.length)
+            alert("This is not a valid SID");
+            return false;
+        }
+        
+        var d=document.forms["mockupbas"]["email"].value;
+        var atpos = d.indexOf("@");
+        var dospos = d.lastIndexOf(".");
+        if (d != "" || d != null)
+        {
+           if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 > d.length)
             {
                 alert("This is not a valid email");
                 return false;
             } 
         }
         
-        var d=document.forms["mockupbas"]["sid"].value;
-        if (d != "" || d != null)
-        {
-            if (d.length < 9 || d.length > 9)
-            {
-                alert("This is not a valid SID");
-                return false;
-            }
-        }
+        
+        
+        
         return true;
     }
 </script>
