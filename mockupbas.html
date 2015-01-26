@@ -21,8 +21,8 @@
         }
         
         var c=document.forms["mockupbas"]["email"].value;
-        var atpos = x.indexOf("@");
-        var dospos = x.lastIndexOf(".");
+        var atpos = c.indexOf("@");
+        var dospos = c.lastIndexOf(".");
         if (c != "" || c != null)
         {
            if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 > c.length)
@@ -33,11 +33,15 @@
         }
         
         var d=document.forms["mockupbas"]["sid"].value;
-        if (d.length < 9 || d.length > 9)
+        if (d != "" || d != null)
         {
-            alert("This is not a valid SID");
-            return false;
+            if (d.length < 9 || d.length > 9)
+            {
+                alert("This is not a valid SID");
+                return false;
+            }
         }
+        
     }
 </script>
 </head>
@@ -49,8 +53,8 @@
     Last Name: <input type="text" id="lname" name="lname">
     
     <br>
-        Email: <input type="text" id="email" name="email">
-        Student ID: <input type="text" id="sid" name="sid">
+    Email: <input type="text" id="email" name="email">
+    Student ID: <input type="text" id="sid" name="sid">
         
     <h3>Which degree are you interested in?</h3>
     <br><input type="radio" id="sd" name="sd" value="Software Development"> Software Development</input>
